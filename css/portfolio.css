@@ -1,6 +1,6 @@
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -69,5 +69,3 @@ main p {
     max-width: 90%;
     margin: 0 auto;
 }
-
-

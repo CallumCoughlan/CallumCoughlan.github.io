@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callum Coughlan</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div id="content"></div>
+
+    <footer>
+        <p>&copy; 2024 Callum Coughlan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                loadPage('welcome'); // Load the initial page content
+            });
+
+        // Load page content based on the link clicked
+        function loadPage(page) {
+            fetch(page + '.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                });
+        }
+
+        // Handle navigation link clicks
+        document.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                e.preventDefault(); // Prevent the default link behavior
+                const page = e.target.getAttribute('href').replace('.html', '');
+                loadPage(page); // Load the new page content
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Load the welcome page by default
-    loadContent('welcome.html');
+    loadContent('pages/welcome.html');
 
     links.forEach(link => {
         link.addEventListener('click', function(e) {
